@@ -149,6 +149,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
+        <!--
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
             <a href="#welcome" class="nav-link">Benvenuti</a>
             <a href="#details" class="nav-link">Dettagli</a>
@@ -157,7 +158,20 @@
             <a href="#logistics" class="nav-link">Logistica</a>
             <a href="#gifts" class="nav-link">Regali</a>
         </div>
+        -->
+
+        <!-- Mobile menu Originale OK -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#welcome" class="block py-2 text-gray-700 hover:text-rose-300 transition">Benvenuti</a>
+            <a href="#details" class="block py-2 text-gray-700 hover:text-rose-300 transition">Dettagli</a>
+            <a href="#schedule" class="block py-2 text-gray-700 hover:text-rose-300 transition">Programma</a>
+            <a href="#rsvp" class="block py-2 text-gray-700 hover:text-rose-300 transition">RSVP</a>
+            <a href="#logistics" class="block py-2 text-gray-700 hover:text-rose-300 transition">Logistics</a>
+            <a href="#gifts" class="block py-2 text-gray-700 hover:text-rose-300 transition">Gifts</a>
+        </div>
     </nav>
+
+    
 
     <!-- Hero Section -->
     <header class="hero-image h-screen flex items-center justify-center text-center text-white pt-16">
@@ -206,53 +220,60 @@
     </section>
 
     <!-- Event Details -->
-    <section id="details" class="py-20 bg-brand-light px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Dettagli dell'Evento</h2>
-                <div class="section-divider"></div>
+<section id="details" class="py-20 bg-brand-light px-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Dettagli dell'Evento</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <!-- BOX CERIMONIA -->
+            <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
+                <!-- Immagine decorativa -->
+                <img src="Cerimonia.png" alt="Ceremony Icon" 
+                     class="absolute -top-20 right-0 md:-right-6 w-48 sm:w-56 md:w-64 h-auto max-w-[40%] md:max-w-none">
+                
+                <h3 class="text-2xl heading-font mb-4 text-brand">Cerimonia</h3>
+                <!--<p class="text-lg mb-2">Pieve di San Giovanni Battista<br> in Contignaco</p> -->
+                <p class="text-lg mb-2">Pieve di <br> San Giovanni Battista</p>
+                <p class="mb-4"> Località Contignaco, <br> 43039 Salsomaggiore Terme PR</p>
+                <p class="mb-6"><span class="font-medium">Orario:</span> 16:30</p>
+
+                <!-- MAPPA CERIMONIA -->
+                <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.9763935443075!2d9.965978400000001!3d44.7812866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47808a7730ece17b%3A0xebfc9f5e3c3400e3!2sChiesa%20Parrocchiale%20di%20San%20Giovanni!5e0!3m2!1sit!2sit!4v1756638490034!5m2!1sit!2sit" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <p class="text-sm text-gray-600">Parcheggio disponibile nel piazzale antistante la chiesa.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
-                    <!-- Immagine decorativa -->
-                    <img src="Cerimonia.png" alt="Ceremony Icon" class="absolute -top-20 -right-6 w-48 h-auto">
-                    <h3 class="text-2xl heading-font mb-4 text-brand">Ceremonia</h3>
-                    <!--<p class="text-lg mb-2">Pieve di San Giovanni Battista<br> in Contignaco</p> -->
-                    <p class="text-lg mb-2">Pieve di <br> San Giovanni Battista</p>
-                    <p class="mb-4"> Località Contignaco, <br> 43039 Salsomaggiore Terme PR</p>
-                    <p class="mb-6"><span class="font-medium">Orario:</span> 16:30</p>
-                    <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.9763935443075!2d9.965978400000001!3d44.7812866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47808a7730ece17b%3A0xebfc9f5e3c3400e3!2sChiesa%20Parrocchiale%20di%20San%20Giovanni!5e0!3m2!1sit!2sit!4v1756638490034!5m2!1sit!2sit" 
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="w-full h-full flex items-center justify-center text-gray-500">
-                            <p>Map of ceremony location</p>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-600">Parcheggio disponibile nel piazzale antistante la chiesa.</p>
-                </div>
+            <!-- BOX RICEVIMENTO -->
+            <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
+                <!-- Immagine decorativa -->
+                <img src="Location.png" alt="Reception Icon" 
+                     class="absolute -top-20 right-0 md:-right-6 w-48 sm:w-56 md:w-64 h-auto max-w-[40%] md:max-w-none">
                 
-                <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
-                    <!-- Immagine decorativa -->
-                    <img src="Location.png" alt="Ceremony Icon" class="absolute -top-28 -right-10 w-56 h-auto">
-                    <h3 class="text-2xl heading-font mb-4 text-brand">Ricevimento</h3>
-                    <p class="text-lg mb-2">Ristorante <br> Dodici Monaci</p>
-                    <p class="mb-4">Via Roma, 1/A, <br> 43010 Fontevivo PR</p>
-                    <p class="mb-6"><span class="font-medium">Orario:</span> 18:00 - 01:30</p>
-                    <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.2359874973477!2d10.1762799!3d44.85749039999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47805d45b967020b%3A0xbb5ca99455d2d665!2sRistorante%2012%20Monaci!5e0!3m2!1sit!2sit!4v1756638654379!5m2!1sit!2sit" 
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="w-full h-full flex items-center justify-center text-gray-500">
-                            <p>Map of reception location</p>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-600">Ampio parcheggio disponibile presso la struttura e nelle strade adiacenti.</p>
+                <h3 class="text-2xl heading-font mb-4 text-brand">Ricevimento</h3>
+                <p class="text-lg mb-2">Ristorante <br> Dodici Monaci</p>
+                <p class="mb-4">Via Roma, 1/A, <br> 43010 Fontevivo PR</p>
+                <p class="mb-6"><span class="font-medium">Orario:</span> 18:00 - 01:30</p>
+
+                <!-- MAPPA RICEVIMENTO -->
+                <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.2359874973477!2d10.1762799!3d44.85749039999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47805d45b967020b%3A0xbb5ca99455d2d665!2sRistorante%2012%20Monaci!5e0!3m2!1sit!2sit!4v1756638654379!5m2!1sit!2sit" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
+
+                <p class="text-sm text-gray-600">Ampio parcheggio disponibile presso la struttura e nelle strade adiacenti.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Schedule -->
     <section id="schedule" class="py-20 px-4 max-w-4xl mx-auto">
