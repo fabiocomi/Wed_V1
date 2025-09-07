@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah & Michael's Wedding</title>
+    <title>Fabio & Alessandra's Wedding</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background-color: #d4a59a;
+            background-color: #FF6F40;
         }
         .timeline::before {
             content: '';
@@ -44,7 +44,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background-color: #d4a59a;
+            background-color: #FF6F40;
         }
         .faq-item {
             transition: all 0.3s ease;
@@ -58,6 +58,61 @@
         .gallery-item:hover {
             transform: scale(1.03);
         }
+        /* Pantone 1635 C */
+        .text-pantone1635 {
+        color: #FF6F40;
+        }
+
+        /* Hover più chiaro (sfumatura arancio pesca) */
+        .bg-pantone1635-hover:hover {
+        background-color: #FFD2C2; /* tonalità più chiara del Pantone */
+        }
+        /* Brand color: Pantone 1635 C */
+        .text-brand {
+        color: #FF6F40;
+        }
+
+        .bg-brand {
+        background-color: #FF6F40;
+        color: #fff; /* testo leggibile sullo sfondo brand */
+        }
+
+        /* Hover più chiaro */
+        .text-brand-hover:hover {
+        color: #e65f33; /* versione leggermente più scura per hover sul testo */
+        }
+
+        .bg-brand-hover:hover {
+        background-color: #FFD2C2; /* versione più chiara per hover sul bottone */
+        color: #FF6F40; /* testo in brand color */
+        }
+        /* Backgrounds personalizzati */
+        .bg-brand-light {
+        background-color: #FFF2ED; /* sfondo chiaro soft */
+        }
+
+        .bg-brand {
+        background-color: #FF6F40; /* pieno brand */
+        color: #fff;
+        }
+
+        .bg-brand-dark {
+        background-color: #E65F33; /* leggermente più scuro */
+        color: #fff;
+        }
+        .nav-link {
+        @apply text-gray-700 transition; /* colore di base */
+        }
+
+        .nav-link:hover {
+        color: #FF6F40; /* brand color */
+        }
+        .focus-brand:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #FF6F40; /* Pantone 7476 C */
+        border-color: #FF6F40;
+        }
+
     </style>
 </head>
 <body>
@@ -65,14 +120,26 @@
     <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="text-2xl heading-font text-rose-300">S&M</div>
+                <!--
+                Opzione 1:
+                <div class="text-2xl heading-font text-rose-300">F&A</div>
+                
+                Opzione 2:
+                <div>
+                    <img src="WeddingLogo.png" alt="WeddingLogo" class="h-10 w-auto">
+                </div>
+                -->
+                <div>
+                    <img src="WeddingLogo.png" alt="WeddingLogo" class="h-12 w-auto">
+                </div>
+                
                 <div class="hidden md:flex space-x-8">
-                    <a href="#welcome" class="text-gray-700 hover:text-rose-300 transition">Benvenuti</a>
-                    <a href="#details" class="text-gray-700 hover:text-rose-300 transition">Dettagli</a>
-                    <a href="#schedule" class="text-gray-700 hover:text-rose-300 transition">Programma</a>
-                    <a href="#rsvp" class="text-gray-700 hover:text-rose-300 transition">RSVP</a>
-                    <a href="#logistics" class="text-gray-700 hover:text-rose-300 transition">Logistics</a>
-                    <a href="#gifts" class="text-gray-700 hover:text-rose-300 transition">Gifts</a>
+                    <a href="#welcome" class="nav-link">Benvenuti</a>
+                    <a href="#details" class="nav-link">Dettagli</a>
+                    <a href="#schedule" class="nav-link">Programma</a>
+                    <a href="#rsvp" class="nav-link">RSVP</a>
+                    <a href="#logistics" class="nav-link">Logistica</a>
+                    <a href="#gifts" class="nav-link">Regali</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -83,62 +150,82 @@
         </div>
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
-            <a href="#welcome" class="block py-2 text-gray-700 hover:text-rose-300 transition">Benvenuti</a>
-            <a href="#details" class="block py-2 text-gray-700 hover:text-rose-300 transition">Dettagli</a>
-            <a href="#schedule" class="block py-2 text-gray-700 hover:text-rose-300 transition">Programma</a>
-            <a href="#rsvp" class="block py-2 text-gray-700 hover:text-rose-300 transition">RSVP</a>
-            <a href="#logistics" class="block py-2 text-gray-700 hover:text-rose-300 transition">Logistics</a>
-            <a href="#gifts" class="block py-2 text-gray-700 hover:text-rose-300 transition">Gifts</a>
+            <a href="#welcome" class="nav-link">Benvenuti</a>
+            <a href="#details" class="nav-link">Dettagli</a>
+            <a href="#schedule" class="nav-link">Programma</a>
+            <a href="#rsvp" class="nav-link">RSVP</a>
+            <a href="#logistics" class="nav-link">Logistica</a>
+            <a href="#gifts" class="nav-link">Regali</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero-image h-screen flex items-center justify-center text-center text-white pt-16">
         <div class="px-4 max-w-4xl">
-            <h1 class="text-4xl md:text-6xl font-bold heading-font mb-4">Sarah & Michael</h1>
+            <h1 class="text-4xl md:text-6xl font-bold heading-font mb-4">Fabio & Alessandra</h1>
+            <!--
             <p class="text-xl md:text-2xl mb-8">Alla fine ci sposiamo!</p>
-            <p class="text-2xl md:text-4xl heading-font mb-8">June 20, 2026</p>
+            -->
+            <p class="text-2xl md:text-4xl heading-font mb-8">20 Giugno 2026</p>
+            <a href="#rsvp" class="inline-block bg-white text-brand px-8 py-3 rounded-full font-medium transition duration-300 bg-brand-hover">Conferma la tua presenza</a>
+            <!-- Hero Section 
+            <a href="#rsvp" class="inline-block bg-white text-pantone1635 px-8 py-3 rounded-full font-medium transition duration-300 bg-pantone1635-hover">Conferma la tua presenza</a>
             <a href="#rsvp" class="inline-block bg-white text-rose-400 px-8 py-3 rounded-full font-medium hover:bg-rose-100 transition duration-300">Conferma la tua presenza</a>
+            -->
         </div>
     </header>
 
     <!-- Welcome Section -->
     <section id="welcome" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Benvenuti al nostro matrimonio!</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Benvenuti al nostro matrimonio!</h2>
             <div class="section-divider"></div>
         </div>
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <!-- 
                 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Sarah & Michael" class="rounded-lg shadow-lg w-full">
+                <img src="1.png" alt="Sarah & Michael" class="rounded-lg shadow-lg w-full bg-brand-light">
+                -->
+
+                
+                <img src="1.png" alt="Sarah & Michael" class="rounded-lg w-full">
+
+            
             </div>
             <div class="md:w-1/2">
                 <p class="text-lg mb-6">Cari amici e famiglia,</p>
-                 <p class="mb-6">Dopo anni di convivenza (e di Sara che dice "quando ci sposiamo?" ogni 5 minuti), finalmente abbiamo deciso di ufficializzare! 🥂</p>
+                <p class="mb-6">Dopo anni di convivenza (e di Sara che dice "quando ci sposiamo?" ogni 5 minuti), finalmente abbiamo deciso di ufficializzare! 🥂</p>
                 <p class="mb-6">Saremmo felicissimi di condividere con voi questo giorno speciale, pieno di amore, risate e probabilmente qualche lacrima (soprattutto da parte di Marco).</p>
                 <p class="mb-6">In questo sito troverete tutte le informazioni sul grande giorno. Per favore, confermate la vostra presenza entro il 1° Maggio 2026.</p>
-                <p>Con tutto il nostro amore,</p>
-                <p class="text-xl heading-font text-rose-300">Sarah & Michael</p>
+                <p>Con tutto il nostro amore, <br><br><br> <img src="NomiRosa2.png" alt="Sarah & Michael" class="rounded-lg w-full"></p>
+
+                <!-- <p class="text-xl heading-font text-brand">Fabio & Alessandra</p> -->
             </div>
         </div>
     </section>
 
     <!-- Event Details -->
-    <section id="details" class="py-20 bg-rose-50 px-4">
+    <section id="details" class="py-20 bg-brand-light px-4">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Event Details</h2>
+                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Dettagli dell'Evento</h2>
                 <div class="section-divider"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl heading-font mb-4 text-rose-400">Ceremony</h3>
-                    <p class="text-lg mb-2">Pieve di San Giovanni Battista in Contignaco</p>
-                    <p class="mb-4"> Località Contignaco, 43039 Salsomaggiore Terme PR</p>
+                <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
+                    <!-- Immagine decorativa -->
+                    <img src="Cerimonia.png" alt="Ceremony Icon" class="absolute -top-20 -right-6 w-48 h-auto">
+                    <h3 class="text-2xl heading-font mb-4 text-brand">Ceremonia</h3>
+                    <!--<p class="text-lg mb-2">Pieve di San Giovanni Battista<br> in Contignaco</p> -->
+                    <p class="text-lg mb-2">Pieve di <br> San Giovanni Battista</p>
+                    <p class="mb-4"> Località Contignaco, <br> 43039 Salsomaggiore Terme PR</p>
                     <p class="mb-6"><span class="font-medium">Orario:</span> 16:30</p>
                     <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
-                        <!-- Map placeholder -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.9763935443075!2d9.965978400000001!3d44.7812866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47808a7730ece17b%3A0xebfc9f5e3c3400e3!2sChiesa%20Parrocchiale%20di%20San%20Giovanni!5e0!3m2!1sit!2sit!4v1756638490034!5m2!1sit!2sit" 
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                         <div class="w-full h-full flex items-center justify-center text-gray-500">
                             <p>Map of ceremony location</p>
                         </div>
@@ -146,13 +233,17 @@
                     <p class="text-sm text-gray-600">Parcheggio disponibile nel piazzale antistante la chiesa.</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl heading-font mb-4 text-rose-400">Location</h3>
-                    <p class="text-lg mb-2">Ristorante Dodici Monaci</p>
-                    <p class="mb-4">Via Roma, 1/A, 43010 Fontevivo PR</p>
+                <div class="relative bg-white p-8 rounded-lg shadow-md overflow-visible">
+                    <!-- Immagine decorativa -->
+                    <img src="Location.png" alt="Ceremony Icon" class="absolute -top-28 -right-10 w-56 h-auto">
+                    <h3 class="text-2xl heading-font mb-4 text-brand">Ricevimento</h3>
+                    <p class="text-lg mb-2">Ristorante <br> Dodici Monaci</p>
+                    <p class="mb-4">Via Roma, 1/A, <br> 43010 Fontevivo PR</p>
                     <p class="mb-6"><span class="font-medium">Orario:</span> 18:00 - 01:30</p>
                     <div class="h-48 bg-gray-200 rounded mb-4 overflow-hidden">
-                        <!-- Map placeholder -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.2359874973477!2d10.1762799!3d44.85749039999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47805d45b967020b%3A0xbb5ca99455d2d665!2sRistorante%2012%20Monaci!5e0!3m2!1sit!2sit!4v1756638654379!5m2!1sit!2sit" 
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                         <div class="w-full h-full flex items-center justify-center text-gray-500">
                             <p>Map of reception location</p>
                         </div>
@@ -166,41 +257,41 @@
     <!-- Schedule -->
     <section id="schedule" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Programma dell'Evento</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Programma</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="relative pl-8">
             <div class="timeline">
                 <div class="mb-12 timeline-item relative pl-8">
-                    <h3 class="text-xl heading-font text-rose-400 mb-2">Cerimonia</h3>
+                    <h3 class="text-xl heading-font text-brand mb-2">Cerimonia</h3>
                     <p class="font-medium mb-1">16:30 - 17:30</p>
                     <p class="text-gray-600">Scambio dei voti nella chiesa di San Giovanni Battista in Contignaco</p>
                 </div>
                 
                 <div class="mb-12 timeline-item relative pl-8">
-                    <h3 class="text-xl heading-font text-rose-400 mb-2">Aperitivo</h3>
+                    <h3 class="text-xl heading-font text-brand mb-2">Aperitivo</h3>
                     <p class="font-medium mb-1">18:00 - 19:30</p>
                     <p class="text-gray-600">Drink e stuzzichini nel loggiato</p>
 					<p class="text-sm text-gray-500 mt-2">(Attenzione agli spritz, dovrete reggere almeno fino al momento dell'Open Bar)</p>
                 </div>
                 
                 <div class="mb-12 timeline-item relative pl-8">
-                    <h3 class="text-xl heading-font text-rose-400 mb-2">Cena</h3>
+                    <h3 class="text-xl heading-font text-brand mb-2">Cena</h3>
                     <p class="font-medium mb-1">20:00 - 22:00</p>
                     <p class="text-gray-600">Banchetto e intrattenimento nella corte</p>
 					<p class="text-sm text-gray-500 mt-2">(Limiteremo al minimo i discorsi dei parenti, promesso)</p>
                 </div>
                 
                 <div class="mb-12 timeline-item relative pl-8">
-                    <h3 class="text-xl heading-font text-rose-400 mb-2">Primo Ballo e Taglio della Torta</h3>
+                    <h3 class="text-xl heading-font text-brand mb-2">Primo Ballo e Taglio della Torta</h3>
                     <p class="font-medium mb-1">22:00 - 22:30 </p>
                     <p class="text-gray-600">Momenti celebrativi</p>
 					<p class="text-sm text-gray-500 mt-2">(Disclaimer: non è stato seguito nessun corso di ballo)</p>
                 </div>
                 
                 <div class="timeline-item relative pl-8">
-                    <h3 class="text-xl heading-font text-rose-400 mb-2">Festa No Limits e Open Bar</h3>
+                    <h3 class="text-xl heading-font text-brand mb-2">Festa No Limits e Open Bar</h3>
                     <p class="font-medium mb-1">22:30 - 01:30</p>
                     <p class="text-gray-600">Party time!</p>
 					<p class="text-sm text-gray-500 mt-2">(Abbiamo assunto un DJ ma accettiamo anche richieste imbarazzanti)</p>
@@ -210,10 +301,10 @@
     </section>
 
     <!-- RSVP Section -->
-    <section id="rsvp" class="py-20 bg-rose-50 px-4">
+    <section id="rsvp" class="py-20 bg-brand-light px-4">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">RSVP</h2>
+                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">RSVP</h2>
                 <div class="section-divider"></div>
                 <p class="mb-8">Per favore, rispondi entro il 1° Maggio 2024</p>
                 <p class="text-sm">(Altrimenti ti assegniamo il posto vicino alla zia che parla solo dei suoi gatti)</p>
@@ -222,23 +313,23 @@
             <form action="https://formspree.io/f/xdkzoaka" method="POST" class="bg-white p-8 rounded-lg shadow-md">
                 <div class="mb-6">
                     <label for="name" class="block text-gray-700 mb-2">Nome e Cognome</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-rose-300">
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded focus-brand">
                 </div>
                 
                 <div class="mb-6">
                     <label for="email" class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-rose-300">
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded focus-brand">
                 </div>
                 
                 <div class="mb-6">
                     <p class="block text-gray-700 mb-2">Sarai dei nostri?</p>
                     <div class="flex items-center space-x-4">
                         <label class="inline-flex items-center">
-                            <input type="radio" name="attending" value="yes" class="text-rose-400" checked>
+                            <input type="radio" name="attending" value="yes" class="text-brand" checked>
                             <span class="ml-2">Certo che sì! 🎉</span>
                         </label>
                         <label class="inline-flex items-center">
-                            <input type="radio" name="attending" value="no" class="text-rose-400">
+                            <input type="radio" name="attending" value="no" class="text-brand">
                             <span class="ml-2">Purtroppo no 😢</span>
                         </label>
                     </div>
@@ -247,7 +338,7 @@
                 <div id="attending-details" class="mb-6">
                     <div class="mb-4">
                         <label for="guests" class="block text-gray-700 mb-2">Numero di ospiti</label>
-                        <select id="guests" name="guests" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-rose-300">
+                        <select id="guests" name="guests" class="w-full px-4 py-2 border rounded focus-brand">
                             <option value="1">1 (Solo io)</option>
                             <option value="2" selected>2 (Io + 1)</option>
                             <option value="3">3 (Io + 2)</option>
@@ -258,28 +349,30 @@
                     
                     <div class="mb-4">
                         <label for="dietary" class="block text-gray-700 mb-2">Restrizioni Alimentari</label>
-                        <textarea id="dietary" name="dietary" rows="2" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-rose-300" placeholder="Vegetariano, allergie, ecc."></textarea>
+                        <textarea id="dietary" name="dietary" rows="2" class="w-full px-4 py-2 border rounded focus-brand" placeholder="Vegetariano, allergie, ecc."></textarea>
 						<p class="text-xs text-gray-500 mt-1">(Il menù standard non sarà esattamente Vegan-friendly 🥦)</p>
                     </div>
                     
                     <div>
                         <label for="song" class="block text-gray-700 mb-2">Richiesta musicale</label>
-                        <input type="text" id="song" name="song" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-rose-300" placeholder="Quale canzone ti farà scatenare in pista?">
+                        <input type="text" id="song" name="song" class="w-full px-4 py-2 border rounded focus-brand" placeholder="Quale canzone ti farà scatenare in pista?">
 						<p class="text-xs text-gray-500 mt-1">(Niente Tiziano Ferro, per favore 🙏)</p>
                     </div>
                 </div>
                 
                 <div class="mt-8">
-                    <button type="submit" class="w-full bg-rose-400 text-white py-3 px-6 rounded-full font-medium hover:bg-rose-500 transition duration-300">Invia RSVP</button>
+                    <button type="submit" class="w-full bg-white text-brand px-8 py-3 rounded-full font-medium transition duration-300 bg-brand-hover">Invia RSVP</button>
                 </div>
             </form>
+
+            <!--<a href="#rsvp" class="inline-block bg-white text-brand px-8 py-3 rounded-full font-medium transition duration-300 bg-brand-hover">Conferma la tua presenza</a> -->
             
             <div id="rsvp-success" class="hidden bg-white p-8 rounded-lg shadow-md text-center mt-8">
                 <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <h3 class="text-2xl heading-font mb-2 text-rose-400">Thank You!</h3>
-                <p>Your RSVP has been received. We look forward to celebrating with you!</p>
+                <h3 class="text-2xl heading-font mb-2 text-brand">Grazie!</h3>
+                <p>Abbiamo ricevuto la tua risposta. Non vediamo l'ora di festeggiare insieme!</p>
             </div>
         </div>
     </section>
@@ -287,47 +380,90 @@
     <!-- Logistics -->
     <section id="logistics" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Logistics</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Informazioni Logistiche</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl heading-font mb-4 text-rose-400">Accommodations</h3>
+                <h3 class="text-xl heading-font mb-4 text-brand">E se volessi trascorrere la notte in zona?</h3>
                 <div class="mb-4">
-                    <h4 class="font-medium mb-1">The Grand Hotel</h4>
-                    <p class="text-sm text-gray-600 mb-2">789 Hospitality Blvd, Springfield</p>
-                    <p class="text-sm">Special room block available under "Smith-Jones Wedding". Mention when booking to get the discounted rate.</p>
+                    <h4 class="font-medium mb-1">Le piante di casa SaMar</h4>
+                    <p class="text-sm text-gray-600 mb-2">Via Mulino Nuova 19, 43010 Castelguelfo PR</p>
+                    <p>
+                        <a href="https://www.booking.com/hotel/it/le-piante-di-casa-samar.it.html?label=it-it-booking-desktop-new-VRZD0IC5lt9Ulq*ajTZ_bgS652828999642%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9197879%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&dest_id=-117748&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=28164ede2e750a0c&srepoch=1756638853&atlas_src=sr_iw_title" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link alla pagina Booking
+                        </a>
+                    </p>
                 </div>
                 <div class="mb-4">
-                    <h4 class="font-medium mb-1">Springfield Inn</h4>
-                    <p class="text-sm text-gray-600 mb-2">321 Comfort Lane, Springfield</p>
-                    <p class="text-sm">A more budget-friendly option located 10 minutes from the venue.</p>
+                    <h4 class="font-medium mb-1">Agriturismo La Fattoria del Boschetto</h4>
+                    <p class="text-sm text-gray-600 mb-2">Strada Del Pizzale 143, 43012 Fontanellato, PR<p>
+                        <a href="https://www.booking.com/hotel/it/agriturismo-la-fattoria-del-boschetto.it.html?label=it-it-booking-desktop-new-VRZD0IC5lt9Ulq*ajTZ_bgS652828999642%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9197879%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&dest_id=-117748&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=28164ede2e750a0c&srepoch=1756638853&atlas_src=sr_iw_title" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link alla pagina Booking
+                        </a>
+                    </p>
                 </div>
                 <div>
-                    <h4 class="font-medium mb-1">Airbnb Options</h4>
-                    <p class="text-sm">Several vacation rentals available in the area for groups.</p>
+                    <h4 class="font-medium mb-1">La Casa di Tino</h4>
+                    <p class="text-sm text-gray-600 mb-2">Via IV Novembre 10, 43012 Fontanellato, PR<p>
+                        <a href="https://www.booking.com/hotel/it/la-casa-di-tino.it.html?label=it-it-booking-desktop-new-VRZD0IC5lt9Ulq*ajTZ_bgS652828999642%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp9197879%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&dest_id=-117748&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=28164ede2e750a0c&srepoch=1756638903&atlas_src=sr_iw_title" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link alla pagina Booking
+                        </a>
+                    </p>
                 </div>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl heading-font mb-4 text-rose-400">Transportation</h3>
+                <h3 class="text-xl heading-font mb-4 text-brand">Cosa fare nei dintorni?</h3>
                 <div class="mb-4">
-                    <h4 class="font-medium mb-1">From Airport</h4>
-                    <p class="text-sm">Springfield International Airport is 20 minutes from downtown. Taxis and rideshares available.</p>
+                    <h4 class="font-medium mb-1">Labirinto della Masone</h4>
+                    <p class="text-sm text-gray-600 mb-2">Str. Masone, 121, 43012 Parma, PR</p>
+                    <p>
+                        <a href="https://www.labirintodifrancomariaricci.it/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link al sito
+                        </a>
+                    </p>
                 </div>
                 <div class="mb-4">
-                    <h4 class="font-medium mb-1">Between Venues</h4>
-                    <p class="text-sm">Shuttle service will be provided between ceremony and reception locations from 3:45 PM to 4:15 PM.</p>
+                    <h4 class="font-medium mb-1">Rocca Sanvitale di Fontanellato</h4>
+                    <p class="text-sm text-gray-600 mb-2">Piazza Giacomo Matteotti, 1, 43012 Fontanellato, PR<p>
+                        <a href="https://www.castellidelducato.it/castellidelducato/castello.asp?el=rocca-sanvitale-di-fontanellato" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link al sito
+                        </a>
+                    </p>
                 </div>
                 <div>
-                    <h4 class="font-medium mb-1">Parking</h4>
-                    <p class="text-sm">Ample parking available at both venues. Valet service at reception.</p>
+                    <h4 class="font-medium mb-1">Fidenza Village</h4>
+                    <p class="text-sm text-gray-600 mb-2">Via Federico Fellini, 1, 43036 Fidenza, PR<p>
+                        <a href="https://www.thebicestercollection.com/fidenza-village/it/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-brand hover:underline text-sm">
+                        Link al sito
+                        </a>
+                    </p>
                 </div>
             </div>
             
+            <!--
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl heading-font mb-4 text-rose-400">Weather</h3>
+                <h3 class="text-xl heading-font mb-4 text-brand">Weather</h3>
                 <div class="flex items-center justify-center mb-4">
                     <div class="text-center">
                         <p class="text-lg font-medium">June Average</p>
@@ -339,7 +475,7 @@
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl heading-font mb-4 text-rose-400">Things to Do</h3>
+                <h3 class="text-xl heading-font mb-4 text-brand">Things to Do</h3>
                 <div class="mb-2">
                     <h4 class="font-medium">Springfield Botanical Gardens</h4>
                     <p class="text-sm text-gray-600">Beautiful displays open to the public</p>
@@ -357,55 +493,35 @@
                     <p class="text-sm text-gray-600">Tastings available daily</p>
                 </div>
             </div>
+            
+            -->
+
         </div>
     </section>
 
     <!-- Gift Registry -->
-    <section id="gifts" class="py-20 bg-rose-50 px-4">
+    <section id="gifts" class="py-20 bg-brand-light px-4">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Gift Registry</h2>
+                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Regali</h2>
                 <div class="section-divider"></div>
-                <p class="mb-8">Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we've registered at the following stores:</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-1 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl heading-font mb-2 text-brand">Viaggio di Nozze</h3>
                     <div class="h-16 mb-4 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
+                        <div>
+                            <img src="Plane.png" alt="WeddingLogo" class="h-20 w-auto">
+                        </div>
                     </div>
-                    <h3 class="text-xl heading-font mb-2 text-rose-400">Amazon</h3>
-                    <p class="text-sm mb-4">For our home essentials and honeymoon fund</p>
-                    <a href="#" class="inline-block bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm hover:bg-rose-200 transition">View Registry</a>
+                    <p class="text-sm mb-4">Se desiderate contribuire al nostro viaggio di nozze: <br> IBAN: IT35O0845332680000000176099 <br> Intestato a Fabio Comi <br> Causale: Viaggio di Nozze Alessandra e Fabio</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="h-16 mb-4 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl heading-font mb-2 text-rose-400">Crate & Barrel</h3>
-                    <p class="text-sm mb-4">For kitchenware and dining items</p>
-                    <a href="#" class="inline-block bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm hover:bg-rose-200 transition">View Registry</a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="h-16 mb-4 flex items-center justify-center">
-                        <svg class="w-12 h-12 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl heading-font mb-2 text-rose-400">Honeymoon Fund</h3>
-                    <p class="text-sm mb-4">Contribute to our dream trip to Italy</p>
-                    <a href="#" class="inline-block bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm hover:bg-rose-200 transition">Contribute</a>
-                </div>
             </div>
             
             <div class="mt-12 text-center">
-                <p class="text-sm italic">If you prefer to give cash, we'll have a wishing well at the reception.</p>
+                <!-- <p class="text-sm italic">If you prefer to give cash, we'll have a wishing well at the reception.</p> -->
             </div>
         </div>
     </section>
@@ -413,107 +529,130 @@
     <!-- FAQ -->
     <section id="faq" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Frequently Asked Questions</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Frequently Asked Questions</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="space-y-4">
             <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(1)">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-medium">What's the dress code?</h3>
-                    <svg id="faq-icon-1" class="w-5 h-5 text-rose-400 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h3 class="text-lg font-medium">A che ora dobbiamo arrivare per la cerimonia?</h3>
+                    <svg id="faq-icon-1" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div id="faq-answer-1" class="hidden mt-4">
-                    <p class="text-sm">Semi-formal or cocktail attire. For women, this could be a cocktail dress or dressy separates. For men, a suit or sport coat with dress pants. The ceremony will be in a church, so please avoid overly casual clothing.</p>
+                    <p class="text-sm">La cerimonia inizierà alle ore 16:30, vi consigliamo di arrivare almeno 15 minuti prima per accomodarvi con calma.</p>
                 </div>
             </div>
             
             <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(2)">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-medium">Are children welcome?</h3>
-                    <svg id="faq-icon-2" class="w-5 h-5 text-rose-400 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h3 class="text-lg font-medium">C’è un parcheggio disponibile?</h3>
+                    <svg id="faq-icon-2" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div id="faq-answer-2" class="hidden mt-4">
-                    <p class="text-sm">While we love your little ones, our wedding will be an adults-only event so everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time.</p>
+                    <p class="text-sm">Sì, sia la chiesa che la location del ricevimento dispongono di parcheggi riservati agli invitati. Seguite le indicazioni che troverete all’arrivo.</p>
                 </div>
             </div>
             
             <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(3)">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-medium">Can I take photos during the ceremony?</h3>
-                    <svg id="faq-icon-3" class="w-5 h-5 text-rose-400 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h3 class="text-lg font-medium">È previsto un dress code?</h3>
+                    <svg id="faq-icon-3" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div id="faq-answer-3" class="hidden mt-4">
-                    <p class="text-sm">We're having an "unplugged" ceremony. We kindly ask that all phones and cameras be put away during the ceremony. Our professional photographer will capture this special moment, and we're happy to share the photos with you afterward. After the ceremony, feel free to take as many photos as you'd like!</p>
+                    <p class="text-sm">Non c’è un dress code formale obbligatorio, consigliamo un abbigliamento elegante e comodo.</p>
                 </div>
             </div>
             
             <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(4)">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-medium">What time should I arrive?</h3>
-                    <svg id="faq-icon-4" class="w-5 h-5 text-rose-400 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h3 class="text-lg font-medium">Posso portare bambini?</h3>
+                    <svg id="faq-icon-4" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div id="faq-answer-4" class="hidden mt-4">
-                    <p class="text-sm">Please arrive at least 30 minutes before the ceremony start time (by 2:30 PM) to allow time for parking and seating. The ceremony will begin promptly at 3:00 PM.</p>
+                    <p class="text-sm">Certo! I bambini sono i benvenuti e ci faranno compagnia per tutto l'evento 🎉</p>
                 </div>
             </div>
             
             <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(5)">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-medium">Is there transportation between venues?</h3>
-                    <svg id="faq-icon-5" class="w-5 h-5 text-rose-400 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <h3 class="text-lg font-medium">Ci saranno opzioni per chi ha intolleranze alimentari?</h3>
+                    <svg id="faq-icon-5" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div id="faq-answer-5" class="hidden mt-4">
-                    <p class="text-sm">Yes! We'll have shuttle buses running between the ceremony and reception venues from 3:45 PM to 4:15 PM. The reception venue is about a 15-minute drive from the church. If you miss the shuttle, rideshares are readily available in the area.</p>
+                    <p class="text-sm">Sì, nel form RSVP potete segnalarci eventuali restrizioni alimentari e ci assicureremo che il menù tenga conto delle vostre esigenze.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(6)">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-medium">C’è la possibilità di pernottare vicino alla location?</h3>
+                    <svg id="faq-icon-6" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="faq-answer-6" class="hidden mt-4">
+                    <p class="text-sm">Sì, nella sezione Informazioni Logistiche del sito trovate alcune strutture consigliate con link diretto a Booking.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer" onclick="toggleFAQ(7)">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-medium">Posso fare fotografie durante la cerimonia e il ricevimento?</h3>
+                    <svg id="faq-icon-7" class="w-5 h-5 text-brand transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="faq-answer-7" class="hidden mt-4">
+                    <p class="text-sm"> Assolutamente sì, anzi, <i>dovete</i> farle! Tutte le vostre foto potranno essere condivise in tempo reale sulla Community Whatsapp dedicata.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery -->
-    <section id="gallery" class="py-20 bg-rose-50 px-4">
+    <section id="gallery" class="py-20 bg-brand-light px-4">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Our Story</h2>
+                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">La Nostra Storia</h2>
                 <div class="section-divider"></div>
             </div>
             
             <div class="mb-12">
-                <h3 class="text-xl heading-font mb-4 text-center text-rose-400">How We Met</h3>
+                <h3 class="text-xl heading-font mb-4 text-center text-brand">Come è iniziata</h3>
                 <p class="mb-6">We first crossed paths in the most ordinary of places - a crowded coffee shop on a rainy Tuesday morning. Michael was waiting in line behind Sarah, who was struggling to find her wallet while balancing an armful of books. He offered to pay for her latte, and she insisted on repaying him with a proper coffee date. The rest, as they say, is history.</p>
                 
-                <h3 class="text-xl heading-font mb-4 text-center text-rose-400">The Proposal</h3>
+                <h3 class="text-xl heading-font mb-4 text-center text-brand">La Proposta</h3>
                 <p>On our 5th anniversary, Michael planned what I thought was just a special dinner at our favorite restaurant. After dessert, he suggested we take a walk along the river where we'd had our first date. When we reached the exact spot where we first kissed, he got down on one knee under the stars. Of course, I said yes through happy tears!</p>
             </div>
             
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Gallery</h2>
-                <div class="section-divider"></div>
-                <p class="mb-8">Some of our favorite moments together</p>
+                <h2 class="text-3xl md:text-xl heading-font mb-4 text-brand">Galleria</h2>
+                <p class="mb-8">Alcuni dei nostri momenti preferiti</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Couple photo" class="w-full h-48 object-cover rounded-lg shadow-md">
+                    <img src="Galleria1.jpeg" alt="Couple photo" class="w-full h-48 object-cover rounded-lg shadow-md">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Couple hiking" class="w-full h-48 object-cover rounded-lg shadow-md">
+                    <img src="Galleria2.jpeg" alt="Couple hiking" class="w-full h-48 object-cover rounded-lg shadow-md">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1529257414772-1960b7bea4eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Beach vacation" class="w-full h-48 object-cover rounded-lg shadow-md">
+                    <img src="Galleria3.jpeg" alt="Beach vacation" class="w-full h-48 object-cover rounded-lg shadow-md">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Christmas photo" class="w-full h-48 object-cover rounded-lg shadow-md">
+                    <img src="Galleria4.jpeg" alt="Christmas photo" class="w-full h-48 object-cover rounded-lg shadow-md">
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Engagement photo" class="w-full h-48 object-cover rounded-lg shadow-md">
@@ -523,48 +662,54 @@
                 </div>
             </div>
             
+        <!--
             <div class="mt-12 text-center">
                 <p>Share your photos with us using our wedding hashtag:</p>
                 <p class="text-xl heading-font text-rose-400 mt-2">#SarahAndMichael2024</p>
             </div>
+        -->
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Contact</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Contatti</h2>
             <div class="section-divider"></div>
-            <p class="mb-8">For any questions about the wedding, please contact:</p>
+            <p class="mb-8">Per qualsiasi domanda sul matrimonio, per favore contatta:</p>
         </div>
         
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-md text-center">
                 <div class="h-16 mb-4 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-12 h-12 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl heading-font mb-2 text-rose-400">Email</h3>
-                <p class="mb-4">weddingquestions@sarahandmichael.com</p>
+                <h3 class="text-xl heading-font mb-2 text-brand">Email</h3>
+                <p class="mb-4">fabio-comi@tiscali.it <br>
+                                alessandraferrari27@gmail.com
+                </p>
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-md text-center">
                 <div class="h-16 mb-4 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-12 h-12 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl heading-font mb-2 text-rose-400">Wedding Planner</h3>
-                <p class="mb-4">Emily Johnson: (555) 123-4567</p>
+                <h3 class="text-xl heading-font mb-2 text-brand">Whatsapp</h3>
+                <p class="mb-4">Fabio: 3403161460<br>
+                                Alessandra: 3207435902
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Extras -->
-    <section class="py-20 bg-rose-50 px-4">
+    <!-- Extras 
+    <section class="py-20 bg-brand-light px-4">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-rose-300">Extras</h2>
+            <h2 class="text-3xl md:text-4xl heading-font mb-4 text-brand">Extras</h2>
             <div class="section-divider"></div>
             
             <div class="grid md:grid-cols-3 gap-8 mt-12">
@@ -589,31 +734,36 @@
         </div>
     </section>
 
+    -->
+
     <!-- Footer -->
-    <footer class="py-12 bg-rose-900 text-white text-center">
+    <footer class="py-12 bg-brand-light text-white text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <p class="text-xl heading-font mb-4">Sarah & Michael</p>
-            <p class="mb-6">June 15, 2024</p>
+            -<!--<p class="text-xl heading-font mb-4 text-brand">Fabio & Alessandra</p> -->
+            <img class="rounded-lg mx-auto mb-4 w-64 h-auto items-center justify-center" src="NomiRosa3.png">
+            <p class="mb-6 text-brand">20 Giugno 2026</p>
             
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="#" class="hover:text-rose-200 transition">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="hover:text-brand transition">
+                    <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
                     </svg>
                 </a>
-                <a href="#" class="hover:text-rose-200 transition">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="hover:text-brand transition">
+                    <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"></path>
                     </svg>
                 </a>
-                <a href="#" class="hover:text-rose-200 transition">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!--
+                <a href="#" class="hover:text-brand transition">
+                    <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
                     </svg>
                 </a>
+            -->
             </div>
             
-            <p class="text-sm">© 2024 Sarah & Michael's Wedding. All rights reserved.</p>
+            <p class="text-sm text-brand">© 2026 Fabio & Alessandra's Wedding. All rights reserved.</p>
         </div>
     </footer>
 
